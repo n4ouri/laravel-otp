@@ -1,0 +1,34 @@
+{
+    "name": "envoisms/laravel-otp",
+    "description": "Laravel Notification Channel & OTP Package for EnvoiSMS.ma",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://envoisms.ma/fr/docs",
+    "authors": [
+        {
+            "name": "EnvoiSMS.ma",
+            "email": "contact@envoisms.ma"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "illuminate/support": "^9.0|^10.0|^11.0",
+        "illuminate/notifications": "^9.0|^10.0|^11.0",
+        "envoisms/envoisms-php": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "EnvoiSMS\\Laravel\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EnvoiSMS\\Laravel\\EnvoiSMSServiceProvider"
+            ],
+            "aliases": {
+                "EnvoiSMS": "EnvoiSMS\\Laravel\\Facades\\EnvoiSMS"
+            }
+        }
+    }
+}
