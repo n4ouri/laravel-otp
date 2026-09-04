@@ -1,8 +1,8 @@
 # EnvoiSMS Laravel OTP & Notification Channel
 
-Official Laravel Notification Channel & OTP Package for [EnvoiSMS.ma](https://envoisms.ma) — Morocco's SMS, WhatsApp & Verification API platform.
+Official Laravel Notification Channel & OTP Package for [EnvoiSMS.ma](https://envoisms.ma) — [Passerelle SMS & WhatsApp Business](https://envoisms.ma/fr/docs) and [API SMS Maroc](https://envoisms.ma/fr/tarifs).
 
-For full API documentation, visit [EnvoiSMS Documentation](https://envoisms.ma/fr/docs).
+For full API documentation, visit the [Passerelle SMS & WhatsApp Business](https://envoisms.ma/fr/docs). For pricing plans and credit packs, visit [API SMS Maroc](https://envoisms.ma/fr/tarifs).
 
 ## Installation
 
@@ -84,9 +84,10 @@ if ($result['verified']) {
 }
 ```
 
-## Documentation
+## Documentation & Tarifs
 
-Full platform documentation is available at [https://envoisms.ma/fr/docs](https://envoisms.ma/fr/docs).
+- Guides et référence API : [Passerelle SMS & WhatsApp Business](https://envoisms.ma/fr/docs)
+- Tarifs et packs SMS Maroc : [API SMS Maroc](https://envoisms.ma/fr/tarifs)
 
 ## License
 
