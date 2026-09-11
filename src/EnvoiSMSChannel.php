@@ -20,7 +20,7 @@ class EnvoiSMSChannel
         /** @var EnvoiSMSMessage|string $message */
         $message = $notification->toEnvoiSMS($notifiable);
 
-        $to = $notifiable->routeNotificationFor('envoisms', $notification)
+        $to = $notifiable->routeNotificationFor('EnvoiSMS', $notification)
             ?? $notifiable->routeNotificationFor('sms', $notification)
             ?? $notifiable->phone
             ?? $notifiable->mobile;
