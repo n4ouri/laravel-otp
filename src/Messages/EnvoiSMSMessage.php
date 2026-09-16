@@ -6,6 +6,15 @@ class EnvoiSMSMessage
 {
     public string $content = '';
     public ?string $from = null;
+    /**
+     * 'sms' (default) is what an ordinary notification needs — even when the
+     * recipient uses WhatsApp. 'whatsapp' sends from YOUR OWN connected
+     * WhatsApp Business number: without one the API answers
+     * 403 WHATSAPP_NOT_CONNECTED, and free text outside the 24-hour customer
+     * window answers 400 OUT_OF_24H_WINDOW. Nothing is charged either way.
+     * A one-time code on WhatsApp is ->asOtp(...)->channel('whatsapp'): that
+     * goes through EnvoiSMS's shared sender and needs no connection.
+     */
     public string $channel = 'sms';
     public ?string $brand = null;
     public bool $isOtp = false;

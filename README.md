@@ -62,6 +62,21 @@ Send the notification to any model with a `phone` or `routeNotificationForEnvoiS
 $user->notify(new SendOtpNotification());
 ```
 
+## Plain-text notifications (order status, reminders, alerts)
+
+```php
+public function toEnvoiSMS($notifiable): EnvoiSMSMessage
+{
+    return (new EnvoiSMSMessage())
+        ->content("Bonjour {$notifiable->first_name}, votre commande #{$this->order->id} est expédiée.")
+        ->from('MonBusiness'); // validated Sender ID, or omit for the account default
+}
+```
+
+The channel defaults to `sms`, and that is the right choice for any ordinary text — even to a customer who uses WhatsApp. `->channel('whatsapp')` sends from **your own connected WhatsApp Business number**: without one the API answers `403 WHATSAPP_NOT_CONNECTED`, and free text outside the 24-hour customer window answers `400 OUT_OF_24H_WINDOW`. Nothing is charged in either case. A one-time code on WhatsApp is `->asOtp(...)->channel('whatsapp')`: it goes through EnvoiSMS's shared sender and needs no connection.
+
+Sends carry an `Idempotency-Key` (from the underlying PHP SDK), so a queued notification that is retried never bills twice.
+
 ## Using the Facade Directly
 
 ```php
